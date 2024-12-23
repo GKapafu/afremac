@@ -1,0 +1,146 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    background: goldenrod;
+    height: 66px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+header * {
+    color: black;
+}
+
+header .logo1 img {
+    float: left;
+    width: 216px;
+    height: inherit;
+    margin-top: -41px;
+    margin-left: 20px;
+}
+
+header ul {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;  
+}
+
+header ul li {
+    float: left;
+    position: relative;
+}
+
+header ul li a {
+   display: block;
+   padding: 21px;
+   font-size: 1.1em;
+   text-decoration: none;
+}
+
+header ul li a:hover {
+    background: rgb(122, 121, 121);
+    color: black;
+    transition: .5s;
+    height: inherit;
+ }
+
+header .menu-toggle {
+    display:none;
+}
+
+/* dropdown menu */
+header ul li ul {
+    position: absolute;
+    top: 66px;
+
+    /* make it aligned with the parent on the left */
+    left: 0px;
+    width: 180px;
+    display: none;
+}
+
+header ul li:hover ul {
+    display: block;
+}
+
+header ul li ul li {
+    width: 100%;
+    background: rgb(122, 121, 121);
+}
+
+header ul li ul li a {
+    padding: 10px;
+}
+
+header ul li ul li a:hover {
+    background: #555757;
+    color: white;
+}
+
+/* menu-toggle media query */
+@media only screen and (max-width:820px) {
+    header {
+        position: relative;
+    }
+    /* After this add right: 30 top:10 position: absolute; and font 1.5em to menu-toggle */
+
+    header ul {
+        width: 100%;
+        background: goldenrod;
+        max-height: 0px; 
+        /* after putting max-height: 0px; all ul bacome overflow. hide overflow as next*/
+        overflow: hidden; 
+
+        /* now position the menu to the right. as shown immediately below @media */
+        margin-top: -47px;
+        margin-bottom: 30px;
+    }
+    
+    /* for jquery to work add this class below. give it max-height of navmenu */
+    .showing {
+        max-height: 100em;
+    }
+
+    header ul li {
+        width: 100%;
+    }
+
+    header ul li a {
+        padding: 10px;
+    }
+
+    /* dropdown menu */
+    header ul li ul {
+        position: static;
+        display: block;
+        width: 100%;
+    }
+
+    header ul li ul li a {
+        background: goldenrod;
+        padding: 10px;
+        /* padding-left: 50px; */
+        color: white;
+    }
+    
+    header ul li ul li a:hover {
+        background: #555757;
+        color: white;
+    }
+    /* menu-toggle to display */
+    header .menu-toggle {
+        display:block;
+        /* to hide nav menu add max-height: 0px; on header ul above */
+        position: absolute;
+        right: 20px;
+        top:20px; 
+        font-size: 1.9em;
+        cursor: pointer;
+    }
+
+}
